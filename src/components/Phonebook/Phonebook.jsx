@@ -17,6 +17,9 @@ export class Phonebook extends Component {
   };
 
   componentDidMount() {
+    if (localStorage.getItem('contacts') === null) {
+      return;
+    }
     this.setState({ contacts: getLocal() });
   }
 
